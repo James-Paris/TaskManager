@@ -16,10 +16,12 @@ public class Task {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private Integer id;
 	
 	private String name;
+	
 	private String email;
+	
 	private String description;
 	
 	@DateTimeFormat(pattern= "yyyy-MM-dd")
@@ -31,16 +33,16 @@ public class Task {
 	private String severity;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name="user_id")
 	private User user;
 
-	
+
 	//Auto generated methods:
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -106,6 +108,7 @@ public class Task {
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", severity=" + severity + ", user=" + user
 				+ "]";
 	}
+	
 	
 	
 
